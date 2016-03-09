@@ -1,0 +1,38 @@
+<%= current_usuario.email %>
+<center>
+<h1>Lista de postulados</h1>
+<div class="contene">
+<div class="panel panel-default">
+  
+  <div class="panel-body">
+    <% @representantefs.each do |representantef| %>
+      <div class="contene2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= representantef.nombre %></h3>
+          </div>
+          <div class="panel-body">
+            
+            <%= image_tag(representantef.foto,  height: '250', width: '250') %>
+            
+            <div class="panel-footer"><%= link_to 'Editar', edit_representantef_path(representantef) %>
+            <%= link_to 'Destroy', representantef, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to like_representantef_path(representantef), method: :put, class: "btn btn-default"  do %>
+              <i></i>
+              <%= representantef.get_upvotes.size %>
+            <% end %>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <% end %>
+      </div>
+  </div>
+</div>
+
+
+<br>
+
+<%= button_to 'New representantef', new_representantef_path, class: "btn btn-info", :method => "get"%>
+</center>

@@ -1,0 +1,25 @@
+<%= simple_form_for(@representantem, :html => { :class => 'form-horizontal' } ) do |f| %>
+  <% if @representantem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@representantem.errors.count, "error") %> prohibited this representantem from being saved:</h2>
+
+      <ul>
+      <% @representantem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <label>Foto</label><br>
+    <%= f.file_field :foto %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

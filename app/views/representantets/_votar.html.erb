@@ -1,0 +1,37 @@
+<body class="homepagea">
+ 
+<center>
+    <%= image_tag("banner1.jpg", class: "banner")  %>
+<br></br><br></br>
+<br></br><br></br>
+<h1><strong>Jornada Tarde Noche</strong></h1>
+<div class="contene">
+<div class="panel panel-default">
+  <div class="panel-heading"> <h1>Elección Representante 2016 Centro de Formación en Diseño Confección y Moda Regional Antioquia</h1></div>
+  <div class="panel-body">
+    <% @representantets.each do |representantet| %>
+      <div class="contene2">
+        <div class="panel panel-default cambio">
+          <div class="panel-heading hola">
+            <h3 class="panel-title"><%= representantet.nombre %></h3>
+          </div>
+          <div class="panel-body">
+            
+            <%= image_tag(representantet.foto,  height: '250', width: '250') %>
+            
+            <div class="panel-footer">
+            <%= link_to like_representantet_path(representantet), method: :put, class: "btn btn-default"  do %>
+              
+              <i class="fa fa-thumbs-o-up fa-2x"></i>
+            <% end %>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <% end %>
+      </div>
+  </div>
+</div>
+</center>
+</body>

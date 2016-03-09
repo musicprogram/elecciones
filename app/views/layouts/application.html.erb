@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elecciones 2015</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
+	<%= csrf_meta_tags %>
+</head>
+
+<% if @home_pageaa == true  %>
+  <body class="homepagea">
+<% elsif @home_pagebb == true %>
+  <body class="homepageb">
+<% elsif @home_pagecc == true %>
+  <body class="homepagec">
+<% else %>
+  <body>
+<%end%>
+
+  <div class="container">
+    <div class="row">
+       <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

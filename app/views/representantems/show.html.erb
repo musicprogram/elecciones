@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @representantem.nombre %>
+</p>
+<p>
+  <strong>Nombre:</strong>
+  <%= image_tag(@representantem.foto) %>
+</p>
+
+<%= link_to 'Edit', edit_representantem_path(@representantem) %> |
+<%= link_to 'Back', representantems_path %>

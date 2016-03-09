@@ -1,0 +1,31 @@
+
+
+<center>
+  <%= image_tag("banner2.png", class: "banner")  %>
+
+<br></br><br></br><br></br>
+<br></br>
+<br></br>
+<div class="container centro">
+  <div class="row">
+    <div class="centro1">
+      <h2 align="center">Bienvenido Aprendiz</h2>
+<hr>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <a><%= f.button :submit, "Ingresar", class: 'btn btn-default btn-lg btn-block'%></a>
+  </div>
+<% end %>
+
+    </div>
+
+  </div>
+</div>
